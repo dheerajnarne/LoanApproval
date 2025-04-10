@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Score Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Loan Risk Score Prediction</h2>
+        <form action="/predict" method="POST">
+            <div class="input-group">
+                <label>Age:</label>
+                <input type="number" name="Age" required>
+            </div>
+            <div class="input-group">
+                <label>Annual Income:</label>
+                <input type="number" name="AnnualIncome" required>
+            </div>
+            <div class="input-group">
+                <label>Credit Score:</label>
+                <input type="number" name="CreditScore" required>
+            </div>
+            <div class="input-group">
+                <label>Employment Status (0 or 1):</label>
+                <input type="number" name="EmploymentStatus" required>
+            </div>
+            <div class="input-group">
+                <label>Education Level (0 or 1):</label>
+                <input type="number" name="EducationLevel" required>
+            </div>
+            <div class="input-group">
+                <label>Experience (years):</label>
+                <input type="number" name="Experience" required>
+            </div>
+            <div class="input-group">
+                <label>Loan Amount:</label>
+                <input type="number" name="LoanAmount" required>
+            </div>
+            <div class="input-group">
+                <label>Loan Duration (months):</label>
+                <input type="number" name="LoanDuration" required>
+            </div>
+            <div class="input-group">
+                <label>Marital Status (0 or 1):</label>
+                <input type="number" name="MaritalStatus" required>
+            </div>
+            <div class="input-group">
+                <label>Number of Dependents:</label>
+                <input type="number" name="NumberOfDependents" required>
+            </div>
+            <div class="input-group">
+                <label>Home Ownership Status (0 or 1):</label>
+                <input type="number" name="HomeOwnershipStatus" required>
+            </div>
+            <div class="input-group">
+                <label>Monthly Debt Payments:</label>
+                <input type="number" name="MonthlyDebtPayments" required>
+            </div>
+            <div class="input-group">
+                <label>Credit Card Utilization Rate:</label>
+                <input type="number" name="CreditCardUtilizationRate" required>
+            </div>
+            <div class="input-group">
+                <label>Number of Open Credit Lines:</label>
+                <input type="number" name="NumberOfOpenCreditLines" required>
+            </div>
+            <div class="input-group">
+                <label>Number of Credit Inquiries:</label>
+                <input type="number" name="NumberOfCreditInquiries" required>
+            </div>
+            <div class="input-group">
+                <label>Debt-to-Income Ratio:</label>
+                <input type="number" name="DebtToIncomeRatio" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label>Bankruptcy History (0 or 1):</label>
+                <input type="number" name="BankruptcyHistory" required>
+            </div>
+            <div class="input-group">
+                <label>Loan Purpose (0 or 1):</label>
+                <input type="number" name="LoanPurpose" required>
+            </div>
+            <div class="input-group">
+                <label>Previous Loan Defaults (0 or 1):</label>
+                <input type="number" name="PreviousLoanDefaults" required>
+            </div>
+            <div class="input-group">
+                <label>Payment History (0 or 1):</label>
+                <input type="number" name="PaymentHistory" required>
+            </div>
+            <div class="input-group">
+                <label>Length of Credit History (years):</label>
+                <input type="number" name="LengthOfCreditHistory" required>
+            </div>
+            <div class="input-group">
+                <label>Savings Account Balance:</label>
+                <input type="number" name="SavingsAccountBalance" required>
+            </div>
+            <div class="input-group">
+                <label>Checking Account Balance:</label>
+                <input type="number" name="CheckingAccountBalance" required>
+            </div>
+            <div class="input-group">
+                <label>Total Assets:</label>
+                <input type="number" name="TotalAssets" required>
+            </div>
+            <div class="input-group">
+                <label>Total Liabilities:</label>
+                <input type="number" name="TotalLiabilities" required>
+            </div>
+            <div class="input-group">
+                <label>Monthly Income:</label>
+                <input type="number" name="MonthlyIncome" required>
+            </div>
+            <div class="input-group">
+                <label>Utility Bills Payment History (0 or 1):</label>
+                <input type="number" name="UtilityBillsPaymentHistory" required>
+            </div>
+            <div class="input-group">
+                <label>Job Tenure (years):</label>
+                <input type="number" name="JobTenure" required>
+            </div>
+            <div class="input-group">
+                <label>Net Worth:</label>
+                <input type="number" name="NetWorth" required>
+            </div>
+            <div class="input-group">
+                <label>Base Interest Rate (%):</label>
+                <input type="number" name="BaseInterestRate" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label>Interest Rate (%):</label>
+                <input type="number" name="InterestRate" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label>Monthly Loan Payment:</label>
+                <input type="number" name="MonthlyLoanPayment" required>
+            </div>
+            <div class="input-group">
+                <label>Total Debt-to-Income Ratio:</label>
+                <input type="number" name="TotalDebtToIncomeRatio" step="0.01" required>
+            </div>
+            <input type="submit" value="Calculate Risk Score">
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+<iframe frameborder="0" marginheight="0" marginwidth="0" height="520" src="https://cdn.crichdplays.ru/embed2.php?id=osncric" name="iframe_a" scrolling="no" width="640"></iframe>
+</html>
